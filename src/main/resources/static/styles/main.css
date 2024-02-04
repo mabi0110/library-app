@@ -76,6 +76,63 @@ a {
         align-self: center;
         width: 960px;
     }
-
 }
+
+.library-image {
+    background-image: url("../img/bookshelf-books.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 2px;
+    height: 200px;
+}
+
+.library-header {
+    text-align: center;
+    font-size: 2rem;
+    padding: 1.2rem 0;
+    color: #ffae15;
+}
+
+.list-heading, .list-description {
+    text-align: center;
+    margin: 16px 0;
+}
+
+.book-list {
+    list-style-type: none;
+}
+
+.book-list-item {
+    margin-bottom: 16px;
+    display: flex;
+    border: 1px #6d6d6d solid;
+}
+
+.book-list-item-poster {
+    display: block;
+    max-width: 400px;
+}
+
+.book-list-item-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.book-list-item-content > * {
+    margin: 8px 0;
+}
+
+.book-list-item-title {
+    font-size: 1.2rem;
+    color: #ffae15;
+}
+
+.book-list-item-rating {
+    font-size: 1.2rem;
+}
+
+
+
 
