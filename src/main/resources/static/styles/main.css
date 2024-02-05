@@ -57,27 +57,6 @@ a {
     text-align: center;
 }
 
-@media only screen and (min-width: 992px) {
-    .menu-toggle {
-        display: none;
-    }
-
-    .menu-item {
-        display: block;
-        width: auto;
-        border-bottom: 0;
-    }
-
-    .menu-logo-container {
-        flex: 1;
-    }
-
-    .main-content, .menu {
-        align-self: center;
-        width: 960px;
-    }
-}
-
 .library-image {
     background-image: url("../img/bookshelf-books.jpg");
     background-position: center;
@@ -131,6 +110,107 @@ a {
 
 .book-list-item-rating {
     font-size: 1.2rem;
+}
+
+.book-summary {
+    display: flex;
+    margin-top: 16px;
+}
+
+.book-summary-cover {
+    object-fit: contain;
+    max-width: 200px;
+}
+
+.book-summary-info {
+    margin-left: 16px;
+}
+
+.book-summary-title {
+    margin-bottom: 16px;
+    color: #ffae15;
+    font-size: 1.5rem;
+}
+
+.book-rating-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 200px;
+}
+
+.book-rating-form > p {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.book-rating-value {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.book-rating-button {
+    background-color: #ffc107;
+    border: 0;
+    padding: 4px;
+    font-size: 1rem;
+    border-radius: 4px;
+    opacity: 0.8;
+}
+
+.book-rating-button:hover {
+    opacity: 1;
+}
+
+.book-rating-container > * {
+    margin: 8px 0;
+}
+
+.book-section {
+    margin-top: 16px;
+    padding: 16px;
+    border: 1px #6d6d6d solid;
+}
+
+.book-section-heading {
+    margin-bottom: 8px;
+}
+
+@media only screen and (min-width: 992px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .menu-item {
+        display: block;
+        width: auto;
+        border-bottom: 0;
+    }
+
+    .menu-logo-container {
+        flex: 1;
+    }
+
+    .main-content, .menu {
+        align-self: center;
+        width: 960px;
+    }
+
+    .book {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .book-rating-buttons {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .book-rating-button {
+        font-size: 1.2rem;
+        margin: 0 4px;
+    }
 }
 
 
