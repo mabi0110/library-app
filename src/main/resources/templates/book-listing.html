@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Books</title>
-    <script defer src="../static/scripts/common.js"></script>
-    <link rel="stylesheet" href="../static/styles/main.css">
+    <!--dynamicznie budowany adres do skryptu js i arkusza stylów-->
+    <script defer src="../static/scripts/common.js" th:src="@{/scripts/common.js}"></script>
+    <link rel="stylesheet" href="../static/styles/main.css" th:href="@{/styles/main.css}">
 </head>
     <div class="container">
 
         <ul class="menu">
             <li class="menu-logo-container">
-                <a href="#">
+                <!--dynamicznie budowany adres do strony głównej-->
+                <a href="#" th:href="@{/}">
                     Books
                 </a>
             </li>
@@ -41,9 +43,39 @@
         <h1 class="library-header">Welcome to the library</h1>
 
         <main class="main-content">
-            <h2 class="list-heading">Category</h2>
-            <p class="list-description">Category description</p>
-            <ul class="book-list">
+            <!--nagłówek pobierany z modelu-->
+            <h2 class="list-heading" th:text="${heading}">Promoted books</h2>
+            <!--opis pobierany z modelu-->
+            <p class="list-description" th:text="${description}">Books recommended by users</p>
+            <ul class="book-list" th:remove="all-but-first">
+
+                <li class="book-list-item" th:each="book: ${books}">
+
+                    <a href="#" th:href="@{|/book/${book.id}|}">
+                        <img src="../static/img/poster-templates.png"
+                             th:src="@{/img/poster-templates.png}"
+                             alt="book title"
+                             class="book-list-item-poster">
+                    </a>
+
+                    <div class="book-list-item-card">
+
+                        <div class="book-list-item-content">
+                            <h3 class="book-list-item-title">
+                                <a href="#" th:href="@{|/book/${book.id}|}" th:text="${book.title}">Book title</a>
+                            </h3>
+                            <h4 th:text="${book.description}">Description</h4>
+                            <p th:text="${book.releaseYear}">2000</p>
+                        </div>
+
+                        <div class="book-list-item-rating">
+                            <i>*</i>
+                            <span>8.7</span>
+                        </div>
+
+                    </div>
+                </li>
+
                 <li class="book-list-item">
 
                     <a href="#">
@@ -55,7 +87,9 @@
                     <div class="book-list-item-card">
 
                         <div class="book-list-item-content">
-                            <h3 class="book-list-item-title">Book title</h3>
+                            <h3 class="book-list-item-title">
+                                <a href="#">Book title</a>
+                            </h3>
                             <h4>Description</h4>
                             <p>2000</p>
                         </div>
@@ -79,31 +113,9 @@
                     <div class="book-list-item-card">
 
                         <div class="book-list-item-content">
-                            <h3 class="book-list-item-title">Book title</h3>
-                            <h4>Description</h4>
-                            <p>2000</p>
-                        </div>
-
-                        <div class="book-list-item-rating">
-                            <i>*</i>
-                            <span>8.7</span>
-                        </div>
-
-                    </div>
-                </li>
-
-                <li class="book-list-item">
-
-                    <a href="#">
-                        <img src="../static/img/poster-templates.png"
-                             alt="book title"
-                             class="book-list-item-poster">
-                    </a>
-
-                    <div class="book-list-item-card">
-
-                        <div class="book-list-item-content">
-                            <h3 class="book-list-item-title">Book title</h3>
+                            <h3 class="book-list-item-title">
+                                <a href="#">Book title</a>
+                            </h3>
                             <h4>Description</h4>
                             <p>2000</p>
                         </div>
