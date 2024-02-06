@@ -4,6 +4,7 @@ import com.example.library.domain.book.dto.BookDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BookService {
@@ -18,5 +19,9 @@ public class BookService {
         return bookRepository.findAllByPromotedIsTrue().stream()
                 .map(BookDtoMapper::map)
                 .toList();
+    }
+
+    public Optional<BookDto> findBookById(Long id){
+        return bookRepository.findById(id).map(BookDtoMapper::map);
     }
 }

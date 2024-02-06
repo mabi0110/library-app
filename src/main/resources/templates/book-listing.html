@@ -15,8 +15,8 @@
                 <li class="book-list-item" th:each="book: ${books}">
 
                     <a href="#" th:href="@{|/book/${book.id}|}">
-                        <img src="../static/img/poster-templates.png"
-                             th:src="@{/img/poster-templates.png}"
+                        <img src="../static/img/poster-placeholder.png"
+                             th:src="@{/img/poster-placeholder.png}"
                              alt="book title"
                              class="book-list-item-poster">
                     </a>
@@ -27,6 +27,7 @@
                             <h3 class="book-list-item-title">
                                 <a href="#" th:href="@{|/book/${book.id}|}" th:text="${book.title}">Book title</a>
                             </h3>
+                            <h4 th:text="${book.categoryName}">Category</h4>
                             <h4 th:text="${book.description}">Description</h4>
                             <p th:text="${book.releaseYear}">2000</p>
                         </div>
@@ -42,7 +43,7 @@
                 <li class="book-list-item">
 
                     <a href="#">
-                        <img src="../static/img/poster-templates.png"
+                        <img src="../static/img/poster-placeholder.png"
                              alt="book title"
                              class="book-list-item-poster">
                     </a>
@@ -53,6 +54,7 @@
                             <h3 class="book-list-item-title">
                                 <a href="#">Book title</a>
                             </h3>
+                            <h4>Category</h4>
                             <h4>Description</h4>
                             <p>2000</p>
                         </div>
@@ -68,7 +70,7 @@
                 <li class="book-list-item">
 
                     <a href="#">
-                        <img src="../static/img/poster-templates.png"
+                        <img src="../static/img/poster-placeholder.png"
                              alt="book title"
                              class="book-list-item-poster">
                     </a>
@@ -79,6 +81,7 @@
                             <h3 class="book-list-item-title">
                                 <a href="#">Book title</a>
                             </h3>
+                            <h4>Category</h4>
                             <h4>Description</h4>
                             <p>2000</p>
                         </div>
