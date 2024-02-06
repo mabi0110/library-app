@@ -26,6 +26,5 @@ public class BookController {
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         model.addAttribute("book", book);
         return "book";
-
     }
 }

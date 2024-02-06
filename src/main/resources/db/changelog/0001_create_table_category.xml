@@ -17,6 +17,8 @@
                 <constraints unique="true"/>
             </column>
 
+            <column name="description" type="VARCHAR(500)"/>
+
         </createTable>
 
     </changeSet>
