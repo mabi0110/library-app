@@ -4,6 +4,8 @@ import com.example.library.domain.category.dto.CategoryDto;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+import java.util.List;
+import java.util.stream.StreamSupport;
 
 @Service
 public class CategoryService {
@@ -16,5 +18,12 @@ public class CategoryService {
     public Optional<CategoryDto> findCategoryByName(String name) {
         return categoryRepository.findByNameIgnoreCase(name)
                 .map(CategoryDtoMapper::map);
+    }
+
+    public List<CategoryDto> findAllCategories() {
+        Iterable<Category> categories = categoryRepository.findAll();
+        return StreamSupport.stream(categories.spliterator(), false)
+                .map(CategoryDtoMapper::map)
+                .toList();
     }
 }
