@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin panel</title>
+</head>
+<body>
+    <main class="main-content" layout:fragment="content">
+        <h2 class="list-heading">Admin panel</h2>
+        <ul class="list-border">
+            <li>
+                <a href="#" th:href="@{/admin/add-book}">Add book</a>
+            </li>
+            <li>
+                <a href="#" th:href="@{/admin/add-category}">Add category</a>
+            </li>
+        </ul>
+    </main>
+</body>
+</html>
