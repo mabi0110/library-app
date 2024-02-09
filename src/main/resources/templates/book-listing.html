@@ -16,7 +16,7 @@
 
                     <a href="#" th:href="@{|/book/${book.id}|}">
                         <img src="../static/img/poster-placeholder.png"
-                             th:src="@{/img/poster-placeholder.png}"
+                             th:src="${book.poster ne null} ? @{|/img/${book.poster}|} : @{/img/poster-placeholder.png}"
                              alt="book title"
                              class="book-list-item-poster">
                     </a>
