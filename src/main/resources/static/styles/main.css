@@ -217,7 +217,7 @@ textarea {
     margin-top: 8px;
 }
 
-.mc-form > input, .mc-form > textarea, .mc-form > button {
+.mc-form > input, .mc-form > textarea, .mc-form > button, .mc-form > select {
     font-size: 1.2rem;
     color: black;
     padding: 8px;
@@ -230,11 +230,21 @@ textarea {
     border: none;
 }
 
+.mc-form > input[type=checkbox] {
+    transform:  scale(1.5);
+    margin-left: 5px;
+}
+
+.mc-form > input[type=file] {
+    color: white;
+}
+
 .notification-bar {
     text-align: center;
     background-color: #ffae15;
     padding: 8px 0;
 }
+
 
 @media only screen and (min-width: 992px) {
     .menu-toggle {

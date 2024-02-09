@@ -23,6 +23,7 @@ public class Book {
     private String publisher;
     private Integer releaseYear;
     private boolean promoted;
+    private String poster;
 
     @ManyToOne
     @JoinColumn(name = "category_id", referencedColumnName = "id")

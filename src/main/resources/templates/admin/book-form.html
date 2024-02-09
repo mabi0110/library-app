@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Add new book</title>
+</head>
+<body>
+<main class="main-content" layout:fragment="content">
+    <h2 class="list-heading">Add new book</h2>
+    <form action="" method="post" enctype="multipart/form-data" class="mc-form" th:object="${book}">
+
+        <label for="title">Title</label>
+        <input type="text" id="title" th:field="*{title}">
+
+        <label for="category">Category</label>
+        <select id="category" th:field="*{categoryName}" required>
+            <option value="" hidden>Choose category</option>
+            <option th:each="category: ${categories}" th:value="${category.name}" th:text="${category.name}"></option>
+        </select>
+
+        <label for="publisher">Publisher</label>
+        <input type="text" id="publisher" th:field="*{publisher}">
+
+        <label for="releaseYear">Release year</label>
+        <input type="number" id="releaseYear" th:field="*{releaseYear}">
+
+        <label for="description">Description</label>
+        <textarea id="description" rows="5" th:field="*{description}"></textarea>
+
+        <label for="promoted">Should be promoted on main page?</label>
+        <input type="checkbox" id="promoted" th:field="*{promoted}">
+
+        <label for="poster">Image</label>
+        <input type="file" id="poster" th:field="*{poster}" accept="image/png, image/jpeg">
+
+        <button type="submit">Save</button>
+    </form>
+</main>
+</body>
+</html>

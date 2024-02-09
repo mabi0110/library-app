@@ -12,6 +12,7 @@ public class BookDtoMapper {
                 book.getPublisher(),
                 book.getReleaseYear(),
                 book.isPromoted(),
+                book.getPoster(),
                 book.getCategory().getName()
         );
     }
